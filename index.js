@@ -48,7 +48,7 @@ app.get("/api/:date?", function (req, res) {
 
 // Header Parse API Project
 
-app.get("/api/whoami", function(req,res) {
+app.get("/api2/whoami", function(req,res) {
   console.log({"ipaddress":req.headers["x-forwarded-for"],"language":req.headers["accept-language"],
 "software":req.headers["user-agent"]});
   res.json({"ipaddress":req.headers["x-forwarded-for"],"language":req.headers["accept-language"],
