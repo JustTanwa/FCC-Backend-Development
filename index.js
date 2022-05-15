@@ -24,7 +24,7 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-// user story 1
+// Timestamp API project
 app.get("/api", function (req, res) {
   res.json({unix: new Date().getTime(), utc: new Date().toUTCString()})
 });
@@ -46,7 +46,14 @@ app.get("/api/:date?", function (req, res) {
   }
 })
 
+// Header Parse API Project
 
+app.get("/api/whoami", function(req,res) {
+  console.log({"ipaddress":req.headers["x-forwarded-for"],"language":req.headers["accept-language"],
+"software":req.headers["user-agent"]});
+  res.json({"ipaddress":req.headers["x-forwarded-for"],"language":req.headers["accept-language"],
+"software":req.headers["user-agent"]})
+})
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
